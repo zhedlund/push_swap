@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   error_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zandrahedlund <zandrahedlund@student.42    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/08/30 18:08:38 by zandrahedlu      ###   ########.fr       */
+/*   Updated: 2023/09/05 14:44:01 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	free_stack(t_stack **stack)
 	t_stack	*temp;
 	t_stack	*current;
 
-	if (!stack || !*stack)
+	if (!stack || (!*stack))
 		return ;
 	current = *stack;
 	while (current)
@@ -46,7 +46,7 @@ void	free_array(char **argv)
 	int	i;
 	
 	i = -1;
-	if (!argv || !*argv)
+	if (!argv || (!*argv))
 		return ;
 	while (*argv[i])
 		free(argv[i++]);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_is_valid.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhedlund <zhedlund@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:55:47 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/07/31 20:20:50 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/05 00:46:57 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,6 @@ int	ft_isdigit(char c)
 		return (1);
 	else
 		return (0);
-}
-
-// checks if arg value is 0
-
-int	arg_is_zero(char *argv)
-{
-	int	i;
-	
-	i = 0;
-	if (argv[i] == '+' || argv[i] == '-')
-		i++;
-	while (argv[i] && argv[i] == '0')
-		i++;
-	if (argv[i] != '\0')
-			return (0);
-	return (1);
 }
 
 // checks if input between quotation marks are valid

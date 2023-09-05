@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_last.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zandrahedlund <zandrahedlund@student.42    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:55:57 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/08/21 16:20:18 by zandrahedlu      ###   ########.fr       */
+/*   Updated: 2023/09/05 00:08:20 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

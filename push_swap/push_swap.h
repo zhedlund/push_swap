@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zandrahedlund <zandrahedlund@student.42    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:55 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/08/30 20:50:59 by zandrahedlu      ###   ########.fr       */
+/*   Updated: 2023/09/05 01:39:34 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ typedef struct s_stack
 {
     int             number;
     int             current_position;
-    int             cost;
+    int             cost_to_push;
     bool            top_half;
     bool            lowest_cost;
+    struct  s_stack *target_node;
     struct	s_stack	*next;
 	struct	s_stack	*prev;
 }   t_stack;
@@ -36,29 +37,52 @@ typedef struct s_stack
 int	check_quoted_input(char **argv);
 int	input_is_valid(int argc, char **argv);
 int	check_dup(t_stack *stack_a, int num);
-//t_stack	*process_input(int argc, char **argv);
-//t_stack	*process_quoted_input(char **argv);
 
 //utils
-int		ft_atol(const char *str);
+long		ft_atol(const char *str);
+char	**ft_split(const char *s, char c);
+int	ft_isdigit(char c);
+
+//error handling & free
 void	exit_error(void);
 void	free_array(char **argv);
 void	free_stack(t_stack **stack);
 void    error_free(t_stack **stack_a, char **argv, bool flag_argv);
-char	**ft_split(const char *s, char c);
+
+//stack initialization
+void    create_stack(t_stack **stack_a, char **argv, bool flag_argv);
+void    set_lowest_cost(t_stack *stack_b);
+void    init_nodes(t_stack *stack_a, t_stack *stack_b);
+void    set_cost_to_push(t_stack *stack_a, t_stack *stack_b);
+void    set_current_position(t_stack *stack);
+void set_target_node(t_stack *stack_a, t_stack *stack_b);
 
 //stack utils
-void    create_stack(t_stack **stack_a, char **argv, bool flag_argv);
-int		stack_size(t_stack *stack);
-t_stack	*stack_new_node(int content);
-int		stack_is_sorted(t_stack *stack);
-t_stack	stack_add_back(t_stack **stack, t_stack *new);
+int	stack_size(t_stack *stack);
+void    stack_add_node(t_stack **stack, int num);
+int		stack_is_sorted(t_stack *stack_a);
 t_stack	*stack_last(t_stack *node);
+t_stack *stack_smallest(t_stack *stack);
+t_stack *return_lowest_cost(t_stack *stack);
+void    rotate_to_target(t_stack **stack, t_stack *lowest_cost_node, char stack_name);
+
+//algorithm
+void    push_swap(t_stack **stack_a, t_stack **stack_b);
+void    sort_stack(t_stack **stack_a);
+void    sort_three(t_stack **stack_a);
+void    sort_five(t_stack **stack_a, t_stack **stack_b);
 
 //operations
+void    pa(t_stack **stack_a, t_stack **stack_b);
+void    pb(t_stack **stack_b, t_stack **stack_a);
 void    sa(t_stack **stack_a);
 void    sb(t_stack **stack_b);
 void    ss(t_stack **stack_a, t_stack **stack_b);
-
+void    ra(t_stack **stack_a);
+void    rb(t_stack **stack_b);
+void    rr(t_stack **stack_a, t_stack **stack_b);
+void    rra(t_stack **stack_a);
+void    rrb(t_stack **stack_b);
+void    rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif

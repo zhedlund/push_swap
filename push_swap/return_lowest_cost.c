@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   return_lowest_cost.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:37:15 by zandrahedlu       #+#    #+#             */
-/*   Updated: 2023/09/05 16:14:25 by zhedlund         ###   ########.fr       */
+/*   Created: 2023/09/05 00:21:05 by zhedlund          #+#    #+#             */
+/*   Updated: 2023/09/05 00:25:23 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    sort_stack(t_stack **stack_a)
-{
-    t_stack *stack_b;
+/* returns lowest_cost_node that was flagged in set_lowest_cost */
 
-    stack_b = NULL;
-    printf("inside sort stack\n");
-    if (stack_size(*stack_a) == 2)
-        sa(stack_a);
-    else if (stack_size(*stack_a) == 3)
-        sort_three(stack_a);
-    else
-        push_swap(stack_a, &stack_b);
+t_stack *return_lowest_cost(t_stack *stack)
+{
+    if (!stack)
+        return (NULL);
+    while (stack)
+    {
+        if (stack->lowest_cost)
+            return (stack);
+        stack = stack->next;
+    }
+    return (NULL);
 }

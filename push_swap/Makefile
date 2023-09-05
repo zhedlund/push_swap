@@ -3,24 +3,49 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zhedlund <zhedlund@student.42.fr>          +#+  +:+       +#+         #
+#    By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 17:45:30 by zhedlund          #+#    #+#              #
-#    Updated: 2023/07/18 18:57:46 by zhedlund         ###   ########.fr        #
+#    Updated: 2023/09/05 15:02:24 by zhedlund         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
-SRC = 
-OBJ = $(SRC:c.=.o)
+SRC =                   sort_stack.c \
+                        swap_operations.c \
+                          init_nodes.c \
+                          sort_five.c \
+                          sort_three.c \
+                          create_stack.c \
+                          ft_atol.c \
+                          stack_add_node.c \
+                          rotate_operations.c \
+                          stack_smallest.c \
+                          input_is_valid.c \
+                          check_dup.c \
+                          ft_split.c \
+                          main.c \
+                          reverse_rotate_op.c \
+                          return_lowest_cost.c \
+                          stack_last.c \
+                          push_swap.c \
+                          error_free.c \
+                          stack_is_sorted.c \
+                          stack_size.c \
+                          push_operations.c \
 
-$(NAME)
-		$(CC) $(CFLAGS) $(SRC) $(NAME)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		@rm -rf *.o

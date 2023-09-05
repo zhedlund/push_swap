@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhedlund <zhedlund@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:02:54 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/07/29 16:01:12 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:26:47 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*substring(const char *s, size_t len)
 	char 	*substr;
 	size_t	i;
 	
-	substr = malloc(sizeof(char *) * len + 1);
+	substr = malloc(sizeof(char) * len + 1);
 	if (!substr)
 		return (NULL);
 	i = 0;
@@ -67,7 +67,9 @@ char	**ft_split(const char *s, char c)
 		return (NULL);	
 	while (*s)
 	{
-		if (*s != c)
+		if (*s == c)
+			s++;
+		else
 		{
 			len = 0;
 			while (s[len] && s[len] != c)
@@ -75,7 +77,6 @@ char	**ft_split(const char *s, char c)
 			words[index++] = substring(s, len);
 			s += len;
 		}
-		s++;
 	}
 	words[index] = NULL;
 	return (words);
@@ -85,8 +86,8 @@ char	**ft_split(const char *s, char c)
 int	main(void)
 
 {
-	char	*str1 = "**split**this*";
-	char	**res = ft_split(str1, '*');	
+	char	*str1 = "2 6 4 7";
+	char	**res = ft_split(str1, ' ');	
 	int i = 0;
 
 	while (res[i] != NULL)
@@ -97,4 +98,5 @@ int	main(void)
 	}
 	free(res);
 	return (0);
-}*/
+}
+*/

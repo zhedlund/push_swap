@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   stack_smallest.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:37:15 by zandrahedlu       #+#    #+#             */
-/*   Updated: 2023/09/05 16:14:25 by zhedlund         ###   ########.fr       */
+/*   Created: 2023/09/05 00:10:12 by zhedlund          #+#    #+#             */
+/*   Updated: 2023/09/05 01:39:57 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    sort_stack(t_stack **stack_a)
+t_stack *stack_smallest(t_stack *stack)
 {
-    t_stack *stack_b;
+    long    smallest;
+    t_stack *smallest_node;
 
-    stack_b = NULL;
-    printf("inside sort stack\n");
-    if (stack_size(*stack_a) == 2)
-        sa(stack_a);
-    else if (stack_size(*stack_a) == 3)
-        sort_three(stack_a);
-    else
-        push_swap(stack_a, &stack_b);
+    if (!stack)
+        return (NULL);
+    smallest = LONG_MAX;
+    while (stack)
+    {
+        if (stack->number < smallest)
+        {
+            smallest = stack->number;
+            smallest_node = stack;
+        }
+        stack = stack->next;
+    }
+    return (smallest_node);
 }
