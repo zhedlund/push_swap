@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/05 14:44:01 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:31:59 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_array(char **argv)
 	int	i;
 	
 	i = -1;
-	if (!argv || (!*argv))
+	if ((!argv) || (!*argv))
 		return ;
 	while (*argv[i])
 		free(argv[i++]);
@@ -57,7 +57,7 @@ void	error_free(t_stack **stack_a, char **argv, bool flag_argv)
 {
 	free_stack(stack_a);
 	if (flag_argv)
-		free_array(argv);
+		free(argv);
 	write(2, "Error\n", 6);
 	exit(1);
 }

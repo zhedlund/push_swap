@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:55 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/05 01:39:34 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:08:03 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ typedef struct s_stack
 }   t_stack;
 
 //input check
-int	check_quoted_input(char **argv);
-int	input_is_valid(int argc, char **argv);
-int	check_dup(t_stack *stack_a, int num);
+int     check_quoted_input(char **argv);
+int     input_is_valid(int argc, char **argv);
+int     check_dup(t_stack *stack_a, int num);
 
 //utils
-long		ft_atol(const char *str);
+long	ft_atol(const char *str);
 char	**ft_split(const char *s, char c);
-int	ft_isdigit(char c);
+int     ft_isdigit(char c);
 
 //error handling & free
 void	exit_error(void);
@@ -55,10 +55,10 @@ void    set_lowest_cost(t_stack *stack_b);
 void    init_nodes(t_stack *stack_a, t_stack *stack_b);
 void    set_cost_to_push(t_stack *stack_a, t_stack *stack_b);
 void    set_current_position(t_stack *stack);
-void set_target_node(t_stack *stack_a, t_stack *stack_b);
+void    set_target_node(t_stack *stack_a, t_stack *stack_b);
 
 //stack utils
-int	stack_size(t_stack *stack);
+int     stack_size(t_stack *stack);
 void    stack_add_node(t_stack **stack, int num);
 int		stack_is_sorted(t_stack *stack_a);
 t_stack	*stack_last(t_stack *node);
@@ -70,7 +70,6 @@ void    rotate_to_target(t_stack **stack, t_stack *lowest_cost_node, char stack_
 void    push_swap(t_stack **stack_a, t_stack **stack_b);
 void    sort_stack(t_stack **stack_a);
 void    sort_three(t_stack **stack_a);
-void    sort_five(t_stack **stack_a, t_stack **stack_b);
 
 //operations
 void    pa(t_stack **stack_a, t_stack **stack_b);

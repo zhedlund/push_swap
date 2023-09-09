@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zandrahedlund <zandrahedlund@student.42    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 19:23:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/08/30 16:45:07 by zandrahedlu      ###   ########.fr       */
+/*   Updated: 2023/09/07 15:24:24 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
