@@ -6,21 +6,17 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/08 16:31:59 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:09:46 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// prints "Error" on stderr and exit with exit code 1
 
 void	exit_error(void)
 {
 	write(2, "Error\n", 6);
 	exit (1);
 }
-
-//frees all elements in stack and sets pointer to NULL
 
 void	free_stack(t_stack **stack)
 {
@@ -39,7 +35,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-//deallocates memory used by individual strings in temp array after ft_split
+/* deallocates memory used by individual strings in temp array after ft_split */
 
 void	free_array(char **argv)
 {

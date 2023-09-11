@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 22:58:44 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/05 01:35:29 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:21:24 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void reverse_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *l
 
 /* rotate until node with lowest cost to push is on top*/
 
-void    rotate_to_target(t_stack **stack, t_stack *lowest_cost_node, char stack_name)
+static void    rotate_to_target(t_stack **stack, t_stack *lowest_cost_node, char stack_name)
 {
     while (*stack != lowest_cost_node)
     {

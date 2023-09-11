@@ -6,13 +6,13 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:53:00 by zandrahedlu       #+#    #+#             */
-/*   Updated: 2023/09/04 19:35:19 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:14:54 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// moves top node to bottom
+/* moves top node to bottom */
 
 static void rotate(t_stack **stack)
 {

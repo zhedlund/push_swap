@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:37:15 by zandrahedlu       #+#    #+#             */
-/*   Updated: 2023/09/11 14:33:56 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:18:46 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /* 
 *   checks for highest number in stack and returns pointer to
-*   node w highest number. INT_MAX used as placeholder, to make
-*   sure no number is smaller than init value
+*   node w highest number. INT_MIN used as placeholder, to make
+*   sure no number is smaller than initial value
 */
 
 static t_stack  *find_max_value(t_stack *stack)
@@ -37,8 +37,8 @@ static t_stack  *find_max_value(t_stack *stack)
 }
 
 /* 
-*   If first node is biggest: ra (biggest to bottom)
-*   else if 2nd node is biggest: rra (biggest to bottom)
+*   If top node is biggest: ra (biggest to bottom)
+*   else if 2nd node is biggest: rra (brings biggest to bottom)
 *   check the top two, if smallest is 2nd: sa (swap top 2)
 */
 
@@ -54,7 +54,6 @@ void    sort_three(t_stack **stack_a)
     if ((*stack_a)->number > (*stack_a)->next->number)
         sa(stack_a);
 }
-
 
 void    sort_stack(t_stack **stack_a)
 {

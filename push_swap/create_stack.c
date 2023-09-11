@@ -6,36 +6,70 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:53:01 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/11 14:51:50 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:24:36 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
-{
-	long	num;
-	int	sign;
-	int	i;
+// checks if input between quotation marks are valid
 
-	sign = 1;
-	num = 0;
+int check_quoted_input(char **argv)
+{
+    int i;
+	
 	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+    while (argv[1][i])
+    {
+		if (argv[1][i] == '+' || argv[1][i] == '-')
+		{
+			if (!ft_isdigit(argv[1][i + 1]))
+				return (0);
+			if (i == 0 && ft_isdigit(argv[1][i + 1]))
+				i++;
+			if (argv[1][i - 1] == ' ' && ft_isdigit(argv[1][i + 1]))
+				i++;
+		}
+		if (argv[1][i] == ' ' && ft_isdigit(argv[1][i + 1]) && i != 0)
+			i++;
+		else if (argv[1][i] == ' ' && (argv[1][i + 1] == '+' || argv[1][i + 1] == '-'))
+			i++;
+   	    else if (!ft_isdigit(argv[1][i]))
+       	    return (0);
+		else
+        	i++;
+    }
+    return (1);
+}
+
+//checks if input are digits, + and - only allowed in beginning of arg
+
+int input_is_valid(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		j = 0;
+		while (argv[i][j])
+		{
+			if (argv[i][j] == '+' || argv[i][j] == '-')
+			{
+				if (j != 0)
+					return (0);
+				if (!ft_isdigit(argv[i][j + 1]))
+					return (0);
+				j++;
+			}
+			else if (!ft_isdigit(argv[i][j])) 
+				return (0);
+			j++; 
+		}
+	i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num *= 10;
-		num += str[i] - '0';
-		i++;
-	}
-	return (num * sign);
+	return (1);
 }
 
 int	check_dup(t_stack *stack_a, int num)

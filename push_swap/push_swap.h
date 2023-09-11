@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:55 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/09 14:08:03 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:08:50 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,45 +33,25 @@ typedef struct s_stack
 	struct	s_stack	*prev;
 }   t_stack;
 
-//input check
+/* input check */
+int     check_dup(t_stack *stack_a, int num);
 int     check_quoted_input(char **argv);
 int     input_is_valid(int argc, char **argv);
-int     check_dup(t_stack *stack_a, int num);
 
-//utils
-long	ft_atol(const char *str);
-char	**ft_split(const char *s, char c);
-int     ft_isdigit(char c);
-
-//error handling & free
-void	exit_error(void);
-void	free_array(char **argv);
-void	free_stack(t_stack **stack);
-void    error_free(t_stack **stack_a, char **argv, bool flag_argv);
-
-//stack initialization
-void    create_stack(t_stack **stack_a, char **argv, bool flag_argv);
-void    set_lowest_cost(t_stack *stack_b);
-void    init_nodes(t_stack *stack_a, t_stack *stack_b);
-void    set_cost_to_push(t_stack *stack_a, t_stack *stack_b);
-void    set_current_position(t_stack *stack);
-void    set_target_node(t_stack *stack_a, t_stack *stack_b);
-
-//stack utils
-int     stack_size(t_stack *stack);
-void    stack_add_node(t_stack **stack, int num);
-int		stack_is_sorted(t_stack *stack_a);
-t_stack	*stack_last(t_stack *node);
-t_stack *stack_smallest(t_stack *stack);
-t_stack *return_lowest_cost(t_stack *stack);
-void    rotate_to_target(t_stack **stack, t_stack *lowest_cost_node, char stack_name);
-
-//algorithm
+/* algorithm */
 void    push_swap(t_stack **stack_a, t_stack **stack_b);
 void    sort_stack(t_stack **stack_a);
 void    sort_three(t_stack **stack_a);
 
-//operations
+/* stack initialization */
+void    create_stack(t_stack **stack_a, char **argv, bool flag_argv);
+void    init_nodes(t_stack *stack_a, t_stack *stack_b);
+void    set_cost_to_push(t_stack *stack_a, t_stack *stack_b);
+void    set_current_position(t_stack *stack);
+void    set_lowest_cost(t_stack *stack_b);
+void    set_target_node(t_stack *stack_a, t_stack *stack_b);
+
+/* operations */
 void    pa(t_stack **stack_a, t_stack **stack_b);
 void    pb(t_stack **stack_b, t_stack **stack_a);
 void    sa(t_stack **stack_a);
@@ -83,5 +63,24 @@ void    rr(t_stack **stack_a, t_stack **stack_b);
 void    rra(t_stack **stack_a);
 void    rrb(t_stack **stack_b);
 void    rrr(t_stack **stack_a, t_stack **stack_b);
+
+/* error handling & free */
+void    error_free(t_stack **stack_a, char **argv, bool flag_argv);
+void	exit_error(void);
+void	free_array(char **argv);
+void	free_stack(t_stack **stack);
+
+/* stack utils */
+t_stack *return_lowest_cost(t_stack *stack);
+void    stack_add_node(t_stack **stack, int num);
+int		stack_is_sorted(t_stack *stack_a);
+t_stack	*stack_last(t_stack *node);
+int     stack_size(t_stack *stack);
+t_stack *stack_smallest(t_stack *stack);
+
+/* utils */
+long	ft_atol(const char *str);
+char	**ft_split(const char *s, char c);
+int     ft_isdigit(char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 21:56:28 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/05 00:55:06 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:10:11 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void    set_current_position(t_stack *stack)
     }
 }
 
-/*every node in b gets a target node in a. best match is the next bigger number.
-*  if no node is bigger, best match is the smallest.
-* LONG_MAX is placeholder, to make sure it's not interfering w numbers
-*  in stack from the start
+/*  every node in b gets a target node in a. best match is the next bigger number.
+*   if no node is bigger, best match is the smallest.
+*   LONG_MAX is placeholder, to make sure it's not interfering w numbers
+*   in stack from the start
 */
 
 void set_target_node(t_stack *stack_a, t_stack *stack_b)

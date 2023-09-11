@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zandrahedlund <zandrahedlund@student.42    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:41:20 by zandrahedlu       #+#    #+#             */
-/*   Updated: 2023/08/30 20:47:18 by zandrahedlu      ###   ########.fr       */
+/*   Updated: 2023/09/11 16:19:13 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void swap(t_stack **head)
     if (!head || !*head || size == 1)
         return ;
     second_node = (*head)->next;
-    (*head)->next = second_node->next; // Adjust pointers to swap nodes
+    (*head)->next = second_node->next;
     if (second_node->next)
         second_node->next->prev = *head;
     second_node->prev = NULL;

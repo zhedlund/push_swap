@@ -6,7 +6,7 @@
 #    By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 17:45:30 by zhedlund          #+#    #+#              #
-#    Updated: 2023/09/11 15:04:15 by zhedlund         ###   ########.fr        #
+#    Updated: 2023/09/11 15:32:48 by zhedlund         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,18 @@ NAME = push_swap
 CC = cc
 CFLAGS = -g -Wall -Wextra -Werror
 
-SRC =                   sort_stack.c \
-                        swap_operations.c \
-                          init_nodes.c \
-                          create_stack.c \
-                          rotate_operations.c \
-                          input_is_valid.c \
-                          ft_split.c \
-                          main.c \
-                          reverse_rotate_op.c \
-                          push_swap.c \
+SRC =                     create_stack.c \
                           error_free.c \
+                          init_nodes.c \
+                          main.c \
+                          push_swap.c \
                           push_operations.c \
+                          reverse_rotate_op.c \
+                          rotate_operations.c \
+                          sort_stack.c \
                           stack_utils.c \
+                          swap_operations.c \
+                          utils.c \
 
 OBJ = $(SRC:.c=.o)
 

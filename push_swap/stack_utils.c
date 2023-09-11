@@ -6,13 +6,11 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:55:57 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/11 14:40:41 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:35:02 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//returns a pointer to the last node
 
 t_stack	*stack_last(t_stack *node)
 {
