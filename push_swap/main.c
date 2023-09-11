@@ -6,23 +6,11 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:43 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/08 16:51:56 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:16:45 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void print_stack(t_stack *stack)
-{
-    t_stack *current = stack;
-    while (current != NULL)
-    {
-        printf("%d ", current->number);
-        current = current->next;
-    }
-    printf("\n"); 
-}
-
 
 int	main(int argc, char **argv)
 {
