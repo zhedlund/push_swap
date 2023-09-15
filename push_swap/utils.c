@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:02:54 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/11 15:34:30 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:13:24 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long	ft_atol(const char *str)
 {
 	long	num;
-	int	sign;
-	int	i;
+	int		sign;
+	int		i;
 
 	sign = 1;
 	num = 0;
@@ -67,9 +67,9 @@ static int	wordcount(const char *s, char c)
 
 static char	*substring(const char *s, size_t len)
 {
-	char 	*substr;
+	char	*substr;
 	size_t	i;
-	
+
 	substr = malloc(sizeof(char) * len + 1);
 	if (!substr)
 		return (NULL);
@@ -92,7 +92,7 @@ char	**ft_split(const char *s, char c)
 	index = 0;
 	words = malloc(sizeof(char *) * (wordcount(s, c) + 1));
 	if (!words)
-		return (NULL);	
+		return (NULL);
 	while (*s)
 	{
 		if (*s == c)

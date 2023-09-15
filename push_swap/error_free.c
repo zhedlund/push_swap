@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/11 16:09:46 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:30:36 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,6 @@ void	free_stack(t_stack **stack)
 		current = temp;
 	}
 	*stack = NULL;
-}
-
-/* deallocates memory used by individual strings in temp array after ft_split */
-
-void	free_array(char **argv)
-{
-	int	i;
-	
-	i = -1;
-	if ((!argv) || (!*argv))
-		return ;
-	while (*argv[i])
-		free(argv[i++]);
-	free(argv - 1);
 }
 
 void	error_free(t_stack **stack_a, char **argv, bool flag_argv)

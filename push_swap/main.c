@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:43 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/09 14:16:45 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:28:45 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		exit_error();
 	if (argc == 2)
 	{
-		split_result = ft_split(argv[1], ' '); 
+		split_result = ft_split(argv[1], ' ');
 		flag_argv = true;
 		create_stack(&stack_a, split_result, flag_argv);
 	}
