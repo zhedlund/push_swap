@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/14 14:30:36 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:16:33 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,33 @@ void	exit_error(void)
 {
 	write(2, "Error\n", 6);
 	exit (1);
+}
+
+/*void	free_array(char **argv)
+{
+	int	i;
+
+	i = -1;
+	if (NULL == argv || NULL == *argv)
+		return ;
+	while (argv[i])
+		free(argv[i++]);
+	free(argv - 1);
+}*/
+
+void	free_array(char **str)
+{
+	char	*s;
+
+	if (!str || (!*str))
+		return ;
+	while (*str)
+	{
+		s = *str;
+		str++;
+		free(s);
+	}
+	*str = NULL;
 }
 
 void	free_stack(t_stack **stack)
@@ -35,11 +62,11 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	error_free(t_stack **stack_a, char **argv, bool flag_argv)
+void	error_free(t_stack **stack_a, char **argv, bool flag_split)
 {
 	free_stack(stack_a);
-	if (flag_argv)
-		free(argv);
+	if (flag_split)
+		free_array(argv);
 	write(2, "Error\n", 6);
 	exit(1);
 }

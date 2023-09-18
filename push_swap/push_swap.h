@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:44:55 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/14 13:43:23 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:02:15 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		check_quoted_input(char **argv);
 int		input_is_valid(int argc, char **argv);
 
 /* stack initialization */
-void	create_stack(t_stack **stack_a, char **argv, bool flag_argv);
+void	create_stack(t_stack **stack_a, char **argv, bool flag_split);
 void	init_nodes(t_stack *stack_a, t_stack *stack_b);
 void	set_cost_to_push(t_stack *stack_a, t_stack *stack_b);
 void	set_current_position(t_stack *stack);
@@ -65,9 +65,9 @@ void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 /* error handling & free */
-void	error_free(t_stack **stack_a, char **argv, bool flag_argv);
+void	error_free(t_stack **stack_a, char **argv, bool flag_split);
 void	exit_error(void);
-void	free_array(char **argv);
+void	free_array(char **str);
 void	free_stack(t_stack **stack);
 
 /* stack utils */

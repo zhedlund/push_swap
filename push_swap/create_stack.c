@@ -6,7 +6,7 @@
 /*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:53:01 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/14 14:29:30 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:17:25 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	check_dup(t_stack *stack_a, int num)
 	return (0);
 }
 
-void	create_stack(t_stack **stack_a, char **argv, bool flag_argv)
+void	create_stack(t_stack **stack_a, char **argv, bool flag_split)
 {
 	long	num;
 	int		i;
@@ -92,14 +92,14 @@ void	create_stack(t_stack **stack_a, char **argv, bool flag_argv)
 	{
 		num = ft_atol(argv[i]);
 		if (num < INT_MIN || num > INT_MAX)
-			error_free(stack_a, argv, flag_argv);
+			error_free(stack_a, argv, flag_split);
 		if (check_dup(*stack_a, (int)num))
-			error_free(stack_a, argv, flag_argv);
+			error_free(stack_a, argv, flag_split);
 		stack_add_node(stack_a, (int)num);
 		i++;
 	}
-	if (flag_argv)
-		free(argv);
+	if (flag_split)
+		free_array(argv);
 }
 
 t_stack	*return_lowest_cost(t_stack *stack)
