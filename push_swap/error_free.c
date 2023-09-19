@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:19:14 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/18 20:16:33 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:54:52 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@ void	exit_error(void)
 	write(2, "Error\n", 6);
 	exit (1);
 }
-
-/*void	free_array(char **argv)
-{
-	int	i;
-
-	i = -1;
-	if (NULL == argv || NULL == *argv)
-		return ;
-	while (argv[i])
-		free(argv[i++]);
-	free(argv - 1);
-}*/
 
 void	free_array(char **str)
 {

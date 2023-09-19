@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: zhedlund <zhedlund@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 17:45:30 by zhedlund          #+#    #+#              #
-#    Updated: 2023/09/14 15:44:59 by zhedlund         ###   ########.fr        #
+#    Updated: 2023/09/19 13:52:05 by zhedlund         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
