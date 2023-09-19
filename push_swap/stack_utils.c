@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zhedlund <zhedlund@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: zhedlund <zhedlund@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:55:57 by zhedlund          #+#    #+#             */
-/*   Updated: 2023/09/14 14:08:23 by zhedlund         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:22:45 by zhedlund         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	stack_add_node(t_stack **stack, int num)
 	else
 	{
 		last_node = stack_last(*stack);
-		last_node -> next = node;
+		last_node->next = node;
 		node->prev = last_node;
 	}
 }
